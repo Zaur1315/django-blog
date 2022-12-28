@@ -25,6 +25,9 @@ class Tag(models.Model):
     def __str__(self):
         return self.title
 
+    def get_absolute_url(self):
+        return reverse("tag", kwargs={"slug": self.slug})
+
     class Meta:
         ordering = ['title']
         verbose_name = 'Тег'
@@ -50,7 +53,7 @@ class Post(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse("category", kwargs={"slug": self.slug})
+        return reverse("post", kwargs={"slug": self.slug})
 
     class Meta:
         ordering = ['-created_at']
