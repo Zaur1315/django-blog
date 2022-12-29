@@ -211,25 +211,25 @@
 						</div>
 					</div>
 					<div class="col-md-4">
-						{%get_popular%} {%get_tags%}
 						<div class="newsletter">
-							<h2 class="sidebar-title">Subscribe To oUR nEWSLETTER</h2>
+							<h2 class="sidebar-title">search</h2>
 							<form
-								action="#"
-								method="post"
+								action="{%url 'search'%}"
+								method="get"
 							>
 								<input
-									type="email"
-									name=""
-									id=""
-									placeholder="Email"
+									type="text"
+									name="s"
+									placeholder="Search"
 								/>
 								<input
 									type="submit"
-									value="Subscribe"
+									value="Search"
 								/>
 							</form>
 						</div>
+
+						{%get_popular%} {%get_tags%}
 					</div>
 				</div>
 			</div>
